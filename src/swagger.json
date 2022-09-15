@@ -1,0 +1,151 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "API Rest Clon de Airbnb",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/users": {
+            "get": {
+                "description": "Obtener todos mis usuarios",
+                "tags": ["Users", "v1"],
+                "responses": {
+                    "200": {
+                        "description": "Obtenemos exitosamente todos los usuarios"
+                    },
+                    "400": {
+                        "description": "Generamos un error en caso de que la peticion no se resuelva"
+                    }
+                }
+            },
+            "post" : {
+                "description": "Crear un nuevo usuario",
+                "tags": ["Users", "v1"],
+                "responses": {
+                    "201": {
+                        "description": "Obtenemos exitosamente el usuario creado"
+                    },
+                    "400": {
+                        "description": "Generamos un error en caso de que la peticion no se resuelva"
+                    }
+                }
+            },
+            "delete" : {
+                "parameters":[
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "description": "Eliminar un usuario",
+                "tags": ["Users", "v1"],
+                "responses": {
+                    "204": {
+                        "description": "Se elimina exitosamente un usuario"
+                    },
+                    "400": {
+                        "description": "Generamos un error en caso de que la peticion no se resuelva"
+                    }
+                }
+            },
+            "put": {
+                "parameters":[
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "description": "Actualizar un usuario",
+                "tags": ["Users", "v1"],
+                "responses": {
+                    "200": {
+                        "description": "Se actualza exitosamente un usuario"
+                    },
+                    "400": {
+                        "description": "Generamos un error en caso de que la peticion no se resuelva"
+                    }
+                }
+            }
+        },
+        "/api/v1/users/{id}": {
+            "get":{
+                "parameters":[
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "description": "Obtener un usuario en especifico",
+                "tags": ["Users", "v1"],
+                "responses": {
+                    "200": {
+                        "description": "Obtenemos exitosamente el usuario deseado "
+                    },
+                    "400": {
+                        "description": "Generamos un error en caso de que la peticion no se resuelva"
+                    }
+                }
+            },
+            "delete":{
+                "parameters":[
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "description": "Eliminar un usuario por ID",
+                "tags": ["Users", "v1"],
+                "responses": {
+                    "204": {
+                        "description": "Se elimina exitosamente el usuario deseado "
+                    },
+                    "400": {
+                        "description": "Generamos un error en caso de que la peticion no se resuelva"
+                    }
+                }
+            },
+            "post":{
+                "parameters":[
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "data",
+                        "in": "path",
+                        "description": "Datos del usuario",
+                        "required": true,
+                        "type": "string"
+                    }
+
+                ],
+                "description": "Actualizar un usuario por ID",
+                "tags": ["Users", "v1"],
+                "responses": {
+                    "200": {
+                        "description": "Se actualiza exitosamente el usuario deseado "
+                    },
+                    "400": {
+                        "description": "Generamos un error en caso de que la peticion no se resuelva"
+                    }
+                }
+            }
+            
+        }
+    }
+}
